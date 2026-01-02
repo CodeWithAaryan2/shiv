@@ -88,7 +88,7 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white text-gray-900">
       <Header />
 
-      <section className="relative min-h-screen overflow-hidden flex items-center">
+      <section className="relative min-h-[100svh] sm:min-h-screen overflow-hidden flex items-center">
 
         {/* BACKGROUND IMAGE SLIDESHOW */}
         <div className="absolute inset-0">
@@ -100,54 +100,52 @@ export default function Home() {
             >
               <Image
                 src={image}
-                alt={`Construction ${index + 1}`}
+                alt={`Shiv Enterprises Construction Project ${index + 1}`}
                 fill
                 priority={index === 0}
-                className="object-cover"
+                className="object-cover object-center"
               />
             </div>
           ))}
         </div>
 
-        LEFT LIGHT GRADIENT (MAIN MAGIC)
-        <div className="absolute inset-0 bg-gradient-to-r from-white  to-transparent"></div>
+        {/* RESPONSIVE GRADIENT OVERLAY */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent sm:from-white sm:via-white/70"></div>
 
         {/* CONTENT */}
-        <div className="relative z-10 container mx-auto px-6">
-          <div className="max-w-3xl">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6">
+          <div className="max-w-xl sm:max-w-3xl">
 
             {/* TAG */}
-            <div className="inline-flex items-center gap-2 px-5 py-2 mb-6 rounded-full bg-blue-50 border border-blue-100">
+            <div className="inline-flex items-center gap-2 px-4 py-2 mb-5 rounded-full bg-blue-50 border border-blue-100">
               <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
-              <span className="text-sm font-semibold text-gray-700 tracking-wide">
+              <span className="text-xs sm:text-sm font-semibold text-gray-700 tracking-wide">
                 BUILDING INDIA • SINCE 2020
               </span>
             </div>
 
             {/* HEADING */}
-            <h1 className="leading-none">
-              <span className="block text-[72px] md:text-[100px] font-extrabold text-blue-700">
+            <h1 className="leading-tight">
+              <span className="block text-[42px] sm:text-[72px] md:text-[96px] font-extrabold text-blue-700">
                 SHIV
               </span>
-              <span className="block text-[26px] md:text-[38px] tracking-[0.35em] font-semibold text-gray-900 mt-4">
+              <span className="block mt-2 text-[16px] sm:text-[26px] md:text-[36px] tracking-[0.25em] sm:tracking-[0.35em] font-semibold text-gray-900">
                 ENTERPRISES
               </span>
             </h1>
 
             {/* SUBTEXT */}
-            <p className="mt-8 text-xl md:text-2xl text-gray-700 max-w-xl leading-relaxed">
-              Building landmarks that define trust, scale,
-              and the future of modern India.
+            <p className="mt-6 sm:mt-8 text-base sm:text-xl md:text-2xl text-gray-700 max-w-md sm:max-w-xl leading-relaxed">
+              Trusted infrastructure and construction company delivering roads,
+              materials, and engineering excellence across India.
             </p>
 
-            {/* CTA */}
-
-
             {/* SLIDER DOTS */}
-            <div className="mt-14 flex gap-3">
+            <div className="mt-10 sm:mt-14 flex gap-3">
               {constructionImages.map((_, index) => (
                 <button
                   key={index}
+                  aria-label={`View background image ${index + 1}`}
                   onClick={() => setCurrentImageIndex(index)}
                   className={`h-2 rounded-full transition-all ${index === currentImageIndex
                       ? "w-10 bg-blue-600"
@@ -156,12 +154,11 @@ export default function Home() {
                 />
               ))}
             </div>
-
           </div>
         </div>
 
-        {/* EXPERIENCE CARD */}
-        <div className="absolute bottom-20 left-6 bg-white rounded-2xl px-6 py-5 shadow-2xl border border-gray-200 z-20">
+        {/* EXPERIENCE CARD — MOBILE SAFE */}
+        <div className="hidden sm:block absolute bottom-20 left-6 bg-white rounded-2xl px-6 py-5 shadow-2xl border border-gray-200 z-20">
           <div className="text-3xl font-extrabold text-gray-900">5+</div>
           <div className="text-sm text-gray-600 tracking-wide">
             Years of Excellence
@@ -169,7 +166,7 @@ export default function Home() {
         </div>
 
         {/* SCROLL INDICATOR */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
+        <div className="hidden sm:flex absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
           <div className="flex flex-col items-center gap-2">
             <span className="text-sm text-gray-600">Scroll</span>
             <div className="w-6 h-10 rounded-full border border-gray-400 flex justify-center">
@@ -177,8 +174,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-
       </section>
+
 
 
       {/* Stats Section */}
@@ -233,7 +230,7 @@ export default function Home() {
                 description: 'Highway networks, rural roads, expressways with advanced technology and sustainable practices',
                 icon: '🛣️',
                 color: 'from-blue-600 to-cyan-600',
-              
+
               },
               {
                 title: 'Material Trading',
@@ -268,7 +265,7 @@ export default function Home() {
                   <h3 className="text-2xl font-bold mb-4 text-gray-900">{service.title}</h3>
                   <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
 
-                  
+
 
                   <button className="text-blue-600 font-semibold flex items-center gap-2 group-hover:text-blue-700 transition-colors duration-300">
                     <span>Explore Service</span>
@@ -445,7 +442,7 @@ export default function Home() {
                 </div>
 
                 {/* Floating Icon */}
-                
+
               </div>
             </div>
 
@@ -463,7 +460,7 @@ export default function Home() {
               ].map((project, index) => (
                 <div key={index} className="group">
                   <div className="relative h-64 rounded-2xl overflow-hidden shadow-lg transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/10">
-                    
+
 
                     <Image
                       src={project.image}
@@ -475,10 +472,10 @@ export default function Home() {
 
                     {/* Content Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-6 flex flex-col justify-end">
-                      
+
                       <h4 className="text-lg font-bold text-white mb-2">{project.title}</h4>
 
-                      
+
                     </div>
                   </div>
                 </div>
@@ -489,7 +486,7 @@ export default function Home() {
           {/* Additional Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              
+
               {
                 image: '/project5.png',
                 title: 'Kydganj Prayagraj',
@@ -513,7 +510,7 @@ export default function Home() {
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
 
-                  
+
                   </div>
 
                   {/* Content */}
@@ -534,7 +531,7 @@ export default function Home() {
                     </div>
 
                     {/* Stats */}
-                   
+
 
                     {/* Progress Bar */}
                     <div className="mb-6">
@@ -547,7 +544,7 @@ export default function Home() {
                       </div>
                     </div>
 
-                   
+
                   </div>
                 </div>
               </div>

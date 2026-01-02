@@ -717,11 +717,7 @@ const Portfolio = () => {
               Let&apos;s discuss how we can bring your infrastructure vision to life with our proven expertise and innovative solutions.
             </p>
 
-            <div className="flex flex-wrap justify-center gap-6">
-              <button className="px-12 py-5 bg-transparent border-2 border-blue-600 text-gray-800 font-bold rounded-2xl hover:bg-blue-50 hover:border-blue-700 hover:shadow-2xl hover:shadow-blue-500/20 transform hover:-translate-y-2 transition-all duration-500 text-lg shadow-lg">
-                Download Portfolio PDF
-              </button>
-            </div>
+           
           </div>
         </div>
       </section>

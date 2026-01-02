@@ -14,7 +14,7 @@ const offices = [
   },
   {
     city: "Bhopal",
-    address: "123 Main St, Bhopal, MP 462001",
+    address: "Ayodhya Bypass C-149 Bhopal Madhya Pradesh",
     phone: "+91 85630 19297",
     email: "shiventerprises3366@gmail.com",
     top: "49%",

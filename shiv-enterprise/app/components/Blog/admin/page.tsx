@@ -225,16 +225,21 @@ const AdminPanel = () => {
 
       const formDataToSend = new FormData();
       
-      // Append all form data
+      // Append all form data with proper null checks
       Object.entries(formData).forEach(([key, value]) => {
         if (key === 'image' && value instanceof File) {
           formDataToSend.append(key, value);
         } else if (key === 'tags') {
-          formDataToSend.append(key, value.toString());
+          formDataToSend.append(key, value?.toString() || '');
         } else {
-          formDataToSend.append(key, value.toString());
+          formDataToSend.append(key, value?.toString() || '');
         }
       });
+
+      // Append additional fields if they're missing from formData
+      if (!formData.authorImage) {
+        formDataToSend.append('authorImage', '');
+      }
 
       const url = editingPost 
         ? `${API_URL}/admin/post/${editingPost.id}`
@@ -259,7 +264,7 @@ const AdminPanel = () => {
         fetchStats();
         setShowForm(false);
       } else {
-        alert(`Error: ${data.error}`);
+        alert(`Error: ${data.error || 'Failed to save post'}`);
       }
     } catch (error) {
       console.error('Error saving post:', error);
@@ -276,7 +281,7 @@ const AdminPanel = () => {
       content: post.content,
       category: post.category,
       author: post.author,
-      authorImage: post.authorImage,
+      authorImage: post.authorImage || '',
       readTime: post.readTime,
       image: null,
       featured: post.featured,

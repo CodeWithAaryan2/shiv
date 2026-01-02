@@ -35,7 +35,7 @@ const Contact = () => {
   // Contact info
   const contactInfo = [
     { icon: "📞", title: "Call Us", details: ["+91 98765 43210", "+91 98765 43211"], color: "blue" },
-    { icon: "✉️", title: "Email Us", details: ["info@shivent.com", "projects@shivent.com"], color: "emerald" },
+    { icon: "✉️", title: "Email Us", details: ["contact@shiventerprisees.com"], color: "emerald" },
     { icon: "🏢", title: "Visit Us", details: ["Shiv Enterprises HQ", "Gurugram, Haryana"], color: "purple" },
     { icon: "⏰", title: "Hours", details: ["Mon-Fri: 9AM-7PM", "Sat: 10AM-5PM"], color: "orange" },
   ];
@@ -607,7 +607,7 @@ const Contact = () => {
                   <div className="bg-white rounded-xl p-4 border border-gray-200 shadow-sm">
                     <div className="text-2xl mb-2">📧</div>
                     <div className="font-medium text-gray-900 mb-1">Email Support</div>
-                    <div className="text-sm text-blue-600">support@shivent.com</div>
+                    <div className="text-sm text-blue-600">contact@shiventerprisees.com</div>
                   </div>
                   <div className="bg-white rounded-xl p-4 border border-gray-200 shadow-sm">
                     <div className="text-2xl mb-2">📍</div>
