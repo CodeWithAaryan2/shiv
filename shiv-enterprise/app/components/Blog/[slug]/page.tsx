@@ -52,7 +52,7 @@ const BlogPostPage = () => {
   const [bookmarked, setBookmarked] = useState(false);
   const [allPosts, setAllPosts] = useState<BlogPost[]>([]); // To store all posts for filtering
 
-  const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api/blog";
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://shiv-wv66.onrender.com/api/blog";
 
   useEffect(() => {
     if (slug) {

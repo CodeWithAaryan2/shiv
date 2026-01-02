@@ -54,7 +54,7 @@ const Blog = () => {
     totalLikes: 0
   });
 
-  const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api/blog";
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://shiv-wv66.onrender.com/api/blog";
 
   const blogCategories = [
     "All",

@@ -12,7 +12,7 @@ const AdminLogin = () => {
   const [error, setError] = useState('');
   const router = useRouter();
 
-  const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api/blog";
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://shiv-wv66.onrender.com/api/blog";
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
