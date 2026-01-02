@@ -6,12 +6,22 @@ import os
 import json
 from werkzeug.utils import secure_filename
 import secrets
+import gunicorn
 
 app = Flask(__name__)
-CORS(app, supports_credentials=True, origins=["http://localhost:3000"])
+CORS(app, supports_credentials=True, origins=["http://localhost:3000", "https://shiventerprisees.com"])
 
-# Database configuration
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
+DATABASE_URL = os.environ.get("DATABASE_URL")
+
+if DATABASE_URL:
+    if DATABASE_URL.startswith("postgres://"):
+        DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
+else:
+    # Local development fallback
+    DATABASE_URL = "sqlite:///blog.db"
+
+app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_FOLDER'] = 'uploads/images'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size

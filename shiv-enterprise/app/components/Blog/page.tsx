@@ -170,35 +170,7 @@ const Blog = () => {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-blue-50 text-gray-900">
       <Header />
 
-      {/* Admin Access Buttons */}
-      <div className="fixed top-20 right-4 z-50 flex flex-col gap-2">
-        {!isAdmin ? (
-          <Link
-            href="/components/Blog/admin/login"
-            className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-red-600 to-orange-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-          >
-            <FaEdit className="w-4 h-4" />
-            <span className="text-sm font-medium">Admin Login</span>
-          </Link>
-        ) : (
-          <>
-            <Link
-              href="/components/Blog/admin"
-              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              <FaEdit className="w-4 h-4" />
-              <span className="text-sm font-medium">Admin Panel</span>
-            </Link>
-            <button
-              onClick={handleAdminLogout}
-              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-gray-600 to-gray-800 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-sm"
-            >
-              Logout
-            </button>
-          </>
-        )}
-      </div>
-
+   
       {/* ================= HERO ================= */}
       <section className="relative py-20 lg:py-28 overflow-hidden">
         {/* Background Pattern */}
